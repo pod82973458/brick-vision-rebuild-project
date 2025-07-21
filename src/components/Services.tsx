@@ -1,27 +1,27 @@
 import { Card } from "@/components/ui/card";
-import { Package, TrendingUp, Calculator, Shield } from "lucide-react";
+import { TrendingUp, MapPin, Calculator, PieChart } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: Package,
-      title: "Inventory Management",
-      description: "Track your brick and construction material inventory in real-time with our easy-to-use system."
+      icon: TrendingUp,
+      title: "Market Analysis",
+      description: "Get comprehensive market analysis with price trends, growth patterns, and investment insights for major cities."
     },
     {
-      icon: TrendingUp,
-      title: "Price Monitoring",
-      description: "Stay updated with the latest market prices and trends for all types of construction materials."
+      icon: MapPin,
+      title: "Location Intelligence",
+      description: "Discover the best neighborhoods and areas with detailed location-based property data and market statistics."
     },
     {
       icon: Calculator,
-      title: "Cost Estimation",
-      description: "Calculate project costs accurately with our built-in estimation tools and current market rates."
+      title: "Investment Calculator",
+      description: "Calculate potential returns, mortgage payments, and investment opportunities with our advanced tools."
     },
     {
-      icon: Shield,
-      title: "Quality Assurance",
-      description: "Ensure material quality with our comprehensive tracking and verification system."
+      icon: PieChart,
+      title: "Portfolio Tracking",
+      description: "Track your real estate portfolio performance and monitor market changes affecting your investments."
     }
   ];
 
@@ -33,7 +33,7 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive solutions for all your construction material tracking needs
+            Comprehensive real estate market intelligence and investment tools
           </p>
         </div>
 

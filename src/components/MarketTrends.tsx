@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { TrendingUp, TrendingDown, RefreshCw } from "lucide-react";
 
 interface MarketData {
-  material: string;
+  location: string;
   price: number;
   change: number;
-  unit: string;
+  type: string;
 }
 
 const MarketTrends = () => {
@@ -15,22 +15,22 @@ const MarketTrends = () => {
   const [loading, setLoading] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<string>('');
 
-  // Sample data for demo - in real app, this would come from API
+  // Sample real estate data for demo
   const generateMarketData = (): MarketData[] => {
-    const materials = [
-      { name: 'Red Bricks', basePrice: 8.50, unit: 'per brick' },
-      { name: 'Cement', basePrice: 12.30, unit: 'per kg' },
-      { name: 'Steel Bars', basePrice: 45.80, unit: 'per kg' },
-      { name: 'Sand', basePrice: 35.00, unit: 'per ton' },
-      { name: 'Gravel', basePrice: 28.75, unit: 'per ton' },
-      { name: 'Concrete Blocks', basePrice: 15.60, unit: 'per block' }
+    const properties = [
+      { name: 'Manhattan, NY', basePrice: 1250000, type: 'Condo' },
+      { name: 'Brooklyn, NY', basePrice: 850000, type: 'Townhouse' },
+      { name: 'Los Angeles, CA', basePrice: 950000, type: 'Single Family' },
+      { name: 'Miami, FL', basePrice: 675000, type: 'Condo' },
+      { name: 'Chicago, IL', basePrice: 425000, type: 'Condo' },
+      { name: 'Austin, TX', basePrice: 550000, type: 'Single Family' }
     ];
 
-    return materials.map(material => ({
-      material: material.name,
-      price: Number((material.basePrice + (Math.random() - 0.5) * 2).toFixed(2)),
-      change: Number(((Math.random() - 0.5) * 10).toFixed(2)),
-      unit: material.unit
+    return properties.map(property => ({
+      location: property.name,
+      price: Math.round(property.basePrice + (Math.random() - 0.5) * 100000),
+      change: Number(((Math.random() - 0.3) * 15).toFixed(2)),
+      type: property.type
     }));
   };
 
@@ -63,7 +63,7 @@ const MarketTrends = () => {
             Market Trends
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            Real-time construction material prices and market analysis
+            Real-time property prices and market analysis across major US cities
           </p>
           <div className="flex items-center justify-center gap-4">
             <Button 
@@ -87,7 +87,7 @@ const MarketTrends = () => {
             <Card key={index} className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-foreground">
-                  {item.material}
+                  {item.location}
                 </h3>
                 <div className={`flex items-center ${item.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                   {item.change >= 0 ? (
@@ -102,31 +102,15 @@ const MarketTrends = () => {
               </div>
               
               <div className="text-2xl font-bold text-foreground mb-1">
-                ${item.price}
+                ${item.price.toLocaleString()}
               </div>
               <div className="text-sm text-muted-foreground">
-                {item.unit}
+                Median {item.type} Price
               </div>
             </Card>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Card className="p-6 bg-muted">
-            <h3 className="text-lg font-semibold text-foreground mb-2">
-              API Reference
-            </h3>
-            <p className="text-muted-foreground">
-              <strong>Demo Data:</strong> Using simulated construction material prices. 
-              In production, you can integrate with APIs like:
-            </p>
-            <ul className="text-sm text-muted-foreground mt-2 space-y-1">
-              <li>• <strong>Alpha Vantage</strong> - Commodity prices API</li>
-              <li>• <strong>Quandl/NASDAQ</strong> - Building materials indices</li>
-              <li>• <strong>Federal Reserve Economic Data (FRED)</strong> - Construction price indices</li>
-            </ul>
-          </Card>
-        </div>
       </div>
     </section>
   );

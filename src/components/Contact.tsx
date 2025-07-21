@@ -58,8 +58,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@bricktracker.com",
-      link: "mailto:info@bricktracker.com"
+      content: "info@propertytracker.com",
+      link: "mailto:info@propertytracker.com"
     },
     {
       icon: Phone,
@@ -70,7 +70,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Address",
-      content: "123 Construction Ave, Builder City, BC 12345",
+      content: "456 Real Estate Blvd, Market City, MC 67890",
       link: "#"
     }
   ];
@@ -94,9 +94,9 @@ const Contact = () => {
               Get in Touch
             </h3>
             <p className="text-muted-foreground mb-8">
-              We're here to help you make the most of BrickTracker. Whether you have 
-              questions about our platform, need technical support, or want to discuss 
-              partnership opportunities, our team is ready to assist.
+              We're here to help you make the most of PropertyTracker. Whether you have 
+              questions about our platform, need market analysis support, or want to discuss 
+              investment opportunities, our team is ready to assist.
             </p>
 
             <div className="space-y-6">

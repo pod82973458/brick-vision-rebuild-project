@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-primary rounded"></div>
-            <h1 className="text-xl font-bold text-foreground">BrickTracker</h1>
+            <h1 className="text-xl font-bold text-foreground">PropertyTracker</h1>
           </div>
 
           {/* Desktop Navigation */}
